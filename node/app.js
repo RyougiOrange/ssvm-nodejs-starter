@@ -8,10 +8,12 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => res.redirect("/index.html"));
 
-app.post('/solve', function (req, res) {
-  console.log(req.body.inputnum)
+app.post('/getpi', (req, res) => {
+  // console.log(req)
+  // console.log(req.body.inputnum)
   let pinum = parseInt(req.body.inputnum);
-  res.send(getpi([pinum]))
+  // console.log(pinum)
+  res.send(getpi(pinum))
 })
 
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`))
